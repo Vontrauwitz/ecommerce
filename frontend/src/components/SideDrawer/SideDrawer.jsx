@@ -1,10 +1,29 @@
 import React from 'react';
-import styles from './SideDrawer.module.css'
+import { Link } from 'react-router-dom';
+import './SideDrawer.css'
 
-const SideDrawer = ({ show }) => {
+const SideDrawer = ({ show, click }) => {
   const sideDrawerClass = ["sideDrawer"]
 
-  return show && <div className={styles.sideDrawer}></div>
+  if (show) {
+    sideDrawerClass.push("show")
+  }
+
+  return <div className={sideDrawerClass.join(" ")}>
+    <ul className='sideDrawerLinks' onClick={click}>
+      <li>
+        <Link>
+          <i className='fas fa-shopping-cart'></i>
+          <span>
+            Cart <span className='sideDrawerCartBadge'>0</span>
+          </span>
+        </Link>
+      </li>
+      <li>
+        <Link to='/'>Shop</Link>
+      </li>
+    </ul>
+  </div >
 }
 
 export default SideDrawer;
