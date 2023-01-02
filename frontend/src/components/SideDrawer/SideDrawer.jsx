@@ -12,7 +12,7 @@ const SideDrawer = ({ show, click }) => {
   return <div className={sideDrawerClass.join(" ")}>
     <ul className='sideDrawerLinks' onClick={click}>
       <li>
-        <Link>
+        <Link to='/cart'>
           <i className='fas fa-shopping-cart'></i>
           <span>
             Cart <span className='sideDrawerCartBadge'>0</span>
@@ -23,7 +23,7 @@ const SideDrawer = ({ show, click }) => {
         <Link to='/'>Shop</Link>
       </li>
     </ul>
-  </div >
+  </div>
 }
 
 export default SideDrawer;
